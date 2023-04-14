@@ -1,0 +1,18 @@
+version: '3'
+services:
+  server:
+    build: .
+    ports:
+      - "50051:50051"
+  client1:
+    build: .
+    links:
+      - server
+  client2:
+    build: .
+    links:
+      - server
+  client3:
+    build: .
+    links:
+      - server
